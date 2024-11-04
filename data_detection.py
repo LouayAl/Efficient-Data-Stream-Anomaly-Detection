@@ -62,9 +62,10 @@ def stl_zscore_anomaly_detection(data_stream, window_size=300, seasonal_period=1
 
 def data_stream_with_anomalies2(num):
     t = 0
+    arr = np.zeros((num,2))
     for i in range(num):
-        yield generate_data_point_with_anomalies(t)
-        t += 1
+        arr[i][0],arr[i][1] = generate_data_point_with_anomalies(t)
+    return arr
 
 
 # # Simulated data stream with seasonal patterns and injected anomalies
@@ -73,7 +74,7 @@ def data_stream_with_anomalies2(num):
 # data_stream[100] = 5  # Inject a large anomaly
 # data_stream[300] = -3  # Inject a negative anomaly
 
-# Run the anomaly detection
-anomalies = stl_zscore_anomaly_detection(data_stream_with_anomalies2(1000000), window_size=300, seasonal_period=100, z_threshold=3)
+# # Run the anomaly detection
+# anomalies = stl_zscore_anomaly_detection(data_stream_with_anomalies2(1000000), window_size=300, seasonal_period=100, z_threshold=3)
 
-print("Detected anomalies at indices and values:", anomalies)
+# print("Detected anomalies at indices and values:", anomalies)

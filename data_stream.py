@@ -81,5 +81,5 @@ def simulate_and_plot_stream(num_points=200):
     # Display the plot
     plt.show()
 
-# Run the simulation and plot
-simulate_and_plot_stream()
+# # Run the simulation and plot
+# simulate_and_plot_stream()
