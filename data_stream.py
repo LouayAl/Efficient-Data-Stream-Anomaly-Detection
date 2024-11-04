@@ -41,6 +41,7 @@ def data_stream_with_anomalies():
         t += 1
         time.sleep(0.1)  # Adjust for stream speed (0.1s = 10 points per second)
 
+
 # Collect and plot data with annotations for anomalies
 def simulate_and_plot_stream(num_points=200):
     stream = data_stream_with_anomalies()
